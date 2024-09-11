@@ -35,7 +35,7 @@ export function SideNav(): React.JSX.Element {
         '--NavItem-icon-color': 'var(--mui-palette-neutral-400)',
         '--NavItem-icon-active-color': 'var(--mui-palette-primary-contrastText)',
         '--NavItem-icon-disabled-color': 'var(--mui-palette-neutral-600)',
-        bgcolor: 'var(--SideNav-background)',
+        bgcolor: '#31367D',
         color: 'var(--SideNav-color)',
         display: { xs: 'none', lg: 'flex' },
         flexDirection: 'column',
@@ -51,13 +51,11 @@ export function SideNav(): React.JSX.Element {
       }}
     >
       <Stack spacing={2} sx={{ p: 3 }}>
-        <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-flex' }}>
-          <Logo color="light" height={32} width={122} />
-        </Box>
+        
         <Box
           sx={{
             alignItems: 'center',
-            backgroundColor: 'var(--mui-palette-neutral-950)',
+            backgroundColor: 'white',
             border: '1px solid var(--mui-palette-neutral-700)',
             borderRadius: '12px',
             cursor: 'pointer',
@@ -65,18 +63,22 @@ export function SideNav(): React.JSX.Element {
             p: '4px 12px',
           }}
         >
-          <Box sx={{ flex: '1 1 auto' }}>
-            <Typography color="var(--mui-palette-neutral-400)" variant="body2">
+            <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-flex' }}>
+              <Logo color="light" height={62} width={122} />
+            </Box>
+          
+        </Box>
+        <Box sx={{ flex: '1 1 auto' }}>
+            
+            {/* <Typography color="var(--mui-palette-neutral-400)" variant="body2">
               Workspace
-            </Typography>
-            <Typography color="inherit" variant="subtitle1">
-              Devias
+            </Typography> */}
+            <Typography color="inherit" center variant="subtitle1">
+              Business Analytics
             </Typography>
           </Box>
-          <CaretUpDownIcon />
-        </Box>
       </Stack>
-      <Divider sx={{ borderColor: 'var(--mui-palette-neutral-700)' }} />
+      <Divider sx={{ borderColor: 'white' }} />
       <Box component="nav" sx={{ flex: '1 1 auto', p: '12px' }}>
         {renderNavItems({ pathname, items: navItems })}
       </Box>

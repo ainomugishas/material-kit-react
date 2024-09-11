@@ -13,6 +13,8 @@ export interface LayoutProps {
 
 export function Layout({ children }: LayoutProps): React.JSX.Element {
   return (
+
+    // Start Main Box
     <Box
       sx={{
         display: { xs: 'flex', lg: 'grid' },
@@ -21,16 +23,20 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
         minHeight: '100%',
       }}
     >
+
+      {/* Start Box With Signin form */}
       <Box sx={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column' }}>
         <Box sx={{ p: 3 }}>
           <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-block', fontSize: 0 }}>
-            <DynamicLogo colorDark="light" colorLight="dark" height={32} width={122} />
+            {/* <DynamicLogo colorDark="light" colorLight="dark" height={32} width={122} /> To Put Yo Uganda Logo */}
           </Box>
         </Box>
         <Box sx={{ alignItems: 'center', display: 'flex', flex: '1 1 auto', justifyContent: 'center', p: 3 }}>
           <Box sx={{ maxWidth: '450px', width: '100%' }}>{children}</Box>
         </Box>
       </Box>
+
+      {/* Left Side Box */}
       <Box
         sx={{
           alignItems: 'center',
@@ -46,7 +52,7 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
             <Typography color="inherit" sx={{ fontSize: '24px', lineHeight: '32px', textAlign: 'center' }} variant="h1">
               Welcome to{' '}
               <Box component="span" sx={{ color: '#15b79e' }}>
-                Devias Kit
+                Yo Uganda Payments Dashboard
               </Box>
             </Typography>
             <Typography align="center" variant="subtitle1">
@@ -54,12 +60,12 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
             </Typography>
           </Stack>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Box
+            {/* <Box
               component="img"
               alt="Widgets"
               src="/assets/auth-widgets.png"
               sx={{ height: 'auto', width: '100%', maxWidth: '600px' }}
-            />
+            /> */}
           </Box>
         </Stack>
       </Box>

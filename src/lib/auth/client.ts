@@ -1,6 +1,7 @@
 'use client';
 
 import type { User } from '@/types/user';
+import { logger } from '../default-logger';
 
 function generateToken(): string {
   const arr = new Uint8Array(12);
@@ -11,9 +12,9 @@ function generateToken(): string {
 const user = {
   id: 'USR-000',
   avatar: '/assets/avatar.png',
-  firstName: 'Sofia',
-  lastName: 'Rivers',
-  email: 'sofia@devias.io',
+  firstName: 'Solomon',
+  lastName: 'Ainomugisha',
+  email: 'sainomugisha@yo.co.ug',
 } satisfies User;
 
 export interface SignUpParams {
@@ -52,16 +53,20 @@ class AuthClient {
   }
 
   async signInWithPassword(params: SignInWithPasswordParams): Promise<{ error?: string }> {
+    
     const { email, password } = params;
 
     // Make API request
 
     // We do not handle the API, so we'll check if the credentials match with the hardcoded ones.
-    if (email !== 'sofia@devias.io' || password !== 'Secret1') {
+    if (email !== 'sainomugisha@yo.co.ug' || password !== 'test123') {
+      
       return { error: 'Invalid credentials' };
+
     }
 
     const token = generateToken();
+    
     localStorage.setItem('custom-auth-token', token);
 
     return {};
